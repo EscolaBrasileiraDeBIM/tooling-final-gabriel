@@ -1,0 +1,29 @@
+{
+  "name": "tooling-final-gabriel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EscolaBrasileiraDeBIM/tooling-final-gabriel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EscolaBrasileiraDeBIM/tooling-final-gabriel/issues"
+  },
+  "homepage": "https://github.com/EscolaBrasileiraDeBIM/tooling-final-gabriel#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^14.0.1",
+    "rollup": "^2.79.0"
+  },
+  "dependencies": {
+    "three": "^0.135.0",
+    "web-ifc-viewer": "^1.0.210"
+  }
+}

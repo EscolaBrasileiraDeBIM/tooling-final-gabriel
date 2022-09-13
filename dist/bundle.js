@@ -44151,6 +44151,34 @@ if ( typeof window !== 'undefined' ) {
 
 }
 
+const projects = [
+    {
+        id: 1,
+        name: "Model 1",
+        url: "./data/01.ifc"
+    },
+    {
+        id: 2,
+        name: "Model 2",
+        url: "./data/02.ifc"
+    },
+    {
+        id: 3,
+        name: "Model 3",
+        url: "./data/03.ifc"
+    },
+    {
+        id: 4,
+        name: "Model 4",
+        url: "./data/04.ifc"
+    },
+    {
+        id: 5,
+        name: "Model 5",
+        url: "./data/05.ifc"
+    }
+];
+
 var NavigationModes;
 (function (NavigationModes) {
     NavigationModes[NavigationModes["Orbit"] = 0] = "Orbit";
@@ -121777,11 +121805,16 @@ const container = document.getElementById('viewer-container');
 const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
 viewer.grid.setGrid();
 viewer.axes.setAxes();
+const currentUrl = window.location.href;
+const url = new URL(currentUrl);
+const id = url.searchParams.get("id");
+
+const project = projects.find(project => project.id == id);
 
 async function loadIfc(url) {
-    await viewer.IFC.setWasmPath("../");
+    await viewer.IFC.setWasmPath("./");
     const model = await viewer.IFC.loadIfcUrl(url);
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
-loadIfc('../data/01.ifc');
+loadIfc(project.url);
